@@ -1,65 +1,3 @@
-# Douban plugin for Jellyfin
-
-## 1. Background
-
-[Jellyfin](https://github.com/jellyfin/jellyfin) is a Free Software Media System
-that puts you in control of managing and streaming your media. You can find
-more information in the [homepage](https://jellyfin.media/)
-
-[Douban](https://www.douban.com/) is a famous media information website in China.
-It just like IMDB or TMDB.
-
-This plugin is a remote metadata provider for Jellyfin, which can fetch metadata
-for movies and TV series from Douban, including rating, summary, casts, etc.
-
-## 2. Usage
-
-In Jellyfin v10.6.0 or newer version, you can install this plugin by adding repository directly.
-
-Repository URL: https://raw.githubusercontent.com/Libitum/jellyfin-plugin-douban/master/manifest.json
-
-
-For version older than v10.6.0, please try the way below:
-
-1. Download from release page or compile by yourself.
-2. Decompress the package, and put the "Douban" directory as the subdirectory of
-   "plugins" in Jellyfin.
-    * For Linux, it's in "~/.local/jellyfin/config/plugins"
-    * For Mac, it's in "~/.local/share/jellyfin/plugins"
-    * For Docker, it's in "/config/plugins" inner Docker
-    * For Windows 10, it's in "C:\ProgramData\Jellyfin\Server\plugins" if using Administrator.
-    * For other system, if you cannot find it, please let me know.
-3. Restart the Jellyfin service.
-
-## 3. Features
-
-1. Support most features of Movie and TV series.
-2. Support fetching background images if the item has suitable backdrop.
-3. Support delay for every request to avoid blocked by Douban.
-4. Do not support merge different seasons into one.
-
-## 4. Configuration
-
-After installing the plugin, we can enable it in libraries for Movie and
-TV series.
-
-Firstly, we need to enable the advanced settings to enable image provider
-which need to be configured later.
-![enable advanced settings](assets/enable_advanced_settings.png?raw=true)
-
-Secondly, please set the language to Chinese. Douban provider will not work in
-other language.
-![language and country](assets/language_and_country.png?raw=true)
-
-Thirdly, please enable "Douban TV Provider" for your libraries. Besides, it's
-"Douban Movie Provider" for type of Movie.
-![enable douban provider](assets/enable_douban_provider.png?raw=true)
-
-Finally, please enable "Douban Image Provider" as the Series image fetcher.
-This is only available when you enable the advanced settings before. It could
-has no posters without this setting.
-![enable image provider](assets/enable_douban_image_provider.png?raw=true)
-
 # 中文版
 
 ## 1. 背景
@@ -100,5 +38,4 @@ has no posters without this setting.
 
 ## 4. 配置
 
-TODO
-
+1. 进入 控制台/媒体库，管理需要使用豆瓣挂削的媒体库，勾选豆瓣相关的元数据下载器即可。
